@@ -6,6 +6,7 @@
   - Login and Register require no auth. Login creates and sends a JWT in the response
     - All other requests require a JWT in the Authorization Header of all requests
   - Check the Utils package and application.properties for the JWT and Spring Security configuration
+  - Check the User class to see the UserDetails implementation, and the OutgoingUserDTO, which we send the JWT with (if it exists)
     
 - Context API for global storage on the front end (might not get to this sadly)
   - Stores the JWT, with all the relevant user info and for use in axios requests
