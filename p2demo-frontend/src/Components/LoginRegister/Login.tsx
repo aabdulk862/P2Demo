@@ -36,7 +36,7 @@ export const Login:React.FC = () => {
         //TODO: make sure the username and password are present before proceeding
 
         //use the username/password from the state object
-        const response = await axios.post("http://localhost:4444/auth", loginCreds, {withCredentials:true}) //withCredentials lets us interact with sessions on the BackEnd
+        const response = await axios.post("http://localhost:4444/auth", loginCreds) //withCredentials lets us interact with sessions on the BackEnd
         .then(
 
             (response) => {
@@ -91,7 +91,7 @@ export const Login:React.FC = () => {
                 />
             </div>
 
-            <div className="d-flex gap-1">
+            <div className="d-flex gap-3 m-3">
                 <Button onClick={login}>Login</Button>
                 <Button onClick={()=>navigate("/register")}>Register</Button>
             </div>
