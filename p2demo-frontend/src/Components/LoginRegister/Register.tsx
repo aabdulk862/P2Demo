@@ -24,27 +24,20 @@ export const Register:React.FC = () => {
     //function that stores values when input boxes change
     //we didn't need to specify the param's data type, I'm just being typesafe
     const storeValues = (event:React.ChangeEvent<HTMLInputElement>) => {
-
         console.log(event) //just to see the event in console
-
         //I'm going to store name and value in variables, for ease of use below
         const name = event.target.name 
         const value = event.target.value
-        
         //annoying syntax - We need to send the entire user object to make a change to one field
         //"Take whatever input was changed, and set the matching state object field to the value of that input"
         //[name] can be EITHER username or password here. Flexible! Whatever input changes will change the appropriate newUser state field
         setNewUser((newUser) => ({...newUser, [name]:value}))
-
         console.log(newUser)
-
     }
 
     //Register function that sends the username/password to the backend in a POST request
     const register = async () => {
-
         //TODO: check that the username/password are present and valid
-
         //POST request - saving the response, but we won't need to use it here
         const response = await axios.post("http://98.81.79.249:4444/users", newUser, {withCredentials:true})
         .then(()=>{
@@ -52,7 +45,6 @@ export const Register:React.FC = () => {
             navigate("/")
         })
         .catch(()=>{alert("Registration failed! Make sure all fields are correct")})
-
     }
 
     return(

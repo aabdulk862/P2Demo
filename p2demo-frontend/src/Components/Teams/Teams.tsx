@@ -6,7 +6,7 @@ import { store } from "../../GlobalData/store";
 
 //interface to model Team objects
 interface Team {
-  teamId: number;
+  teamId: string;
   teamName: string;
   teamLocation: string;
 }
@@ -38,7 +38,7 @@ export const Teams: React.FC = () => {
   };
 
   //hypothetical DELETE team method (just to show how to extract IDs)
-  const deleteTeam = (teamId: number) => {
+  const deleteTeam = (teamId: string) => {
     alert("Team " + teamId + " has been deleted (but not really)");
   };
 

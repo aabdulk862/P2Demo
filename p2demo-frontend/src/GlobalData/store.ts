@@ -12,7 +12,7 @@ export const store = {
         userId:0,
         username:"", 
         role:"",
-        team:{},
+        team:{teamName:""},
         token:""
     }
 
